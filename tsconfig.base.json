@@ -16,7 +16,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@receiver-angular/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@receiver-angular/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@receiver-angular/core-data": ["libs/core-data/src/index.ts"],
+      "@receiver-angular/core-state": ["libs/core-state/src/index.ts"],
+      "@receiver-angular/material": ["libs/material/src/index.ts"],
+      "@receiver-angular/ui-login": ["libs/ui-login/src/index.ts"],
+      "@receiver-angular/environment": ["libs/environment/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

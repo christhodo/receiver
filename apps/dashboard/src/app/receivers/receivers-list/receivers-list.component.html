@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>
+    Receivers
+  </mat-card-title>
+  <mat-card-content>
+    <mat-list data-cy="receivers-list">
+      <mat-list-item
+        *ngFor="let receiver of receivers"
+        attr.data-cy="receiver-{{ receiver.id }}-item"
+        class="mat-list-option"
+        (click)="selected.emit(receiver)"
+      >
+        <span matLine attr.data-cy="receiver-{{ receiver.id }}-item-title">{{
+          receiver.title
+        }}</span>
+        <button
+          *ngIf="!readonly"
+          attr.data-cy="delete-receiver-{{ receiver.id }}-btn"
+          mat-icon-button
+          type="button"
+          color="warn"
+          (click)="deleted.emit(receiver); $event.stopImmediatePropagation()"
+        >
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

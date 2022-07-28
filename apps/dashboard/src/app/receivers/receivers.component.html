@@ -1,0 +1,18 @@
+<div class="component-container">
+  <div class="list-component">
+    <receiver-angular-receivers-list
+      [receivers]="allReceivers$ | async"
+      (selected)="selectReceiver($event)"
+      (deleted)="deleteReceiver($event)"
+    >
+    </receiver-angular-receivers-list>
+  </div>
+  <div class="details-component">
+    <receiver-angular-receiver-details
+      [receiver]="selectedReceiver$ | async"
+      (saved)="saveReceiver($event)"
+      (cancelled)="resetForm()"
+    >
+    </receiver-angular-receiver-details>
+  </div>
+</div>

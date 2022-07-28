@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@receiver-angular/api-interfaces';
+import { AuthGuardService } from '@receiver-angular/core-data';
 
 @Component({
   selector: 'receiver-angular-root',
@@ -8,6 +7,10 @@ import { Message } from '@receiver-angular/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title = '';
+
+  links = [{ path: '/receivers', icon: 'view_list', title: 'Receivers' }];
+
+  userIsAuthenticated = this.authService.isAuthenticated;
+  constructor(private authService: AuthGuardService) {}
 }
